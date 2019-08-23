@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: ELMO Performance Team
+  version: 1.0.0
+paths:
+  /performance/{performanceId}:
+    get:
+      parameters:
+        - in: path
+          name: performanceId
+          required: true
+          schema:
+            type: integer
+            example: 12345
+        - in: header
+          name: performance-id
+          required: false
+          schema:
+            type: integer
+            example: 123-123
+      responses:      
+        200:
+          description: ELMO Performance Team
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 400
+                  name:
+                    type: string
+                    example: Revamp of the Performance Module 
+  /performance:
+    post:
+      description: Performance Module
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 400
+                name:
+                  type: string
+                  example: Revamp of the Performance Module
+      responses:
+        200:
+          description: Request body
+    get:
+      parameters:
+        - in: query
+          name: pageNumber
+          description: Page number to return
+          required: false
+          schema:
+            type: integer
+            example: 1
+        - in: query
+          name: pageSize
+          description: Number of results per page
+          required: false
+          schema:
+            type: integer
+            example: 10
+            maximum: 100
+      responses:
+        200:
+          description: ELMO Performance Team
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                      example: 400
+                    name:
+                      type: string
+                      example: Revamp of the Performance Module

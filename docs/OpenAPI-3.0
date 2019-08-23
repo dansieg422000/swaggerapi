@@ -1,0 +1,31 @@
+OpenAPI 3.0 pattern
+info
+  servers,security
+    paths
+      tags,externaldocs
+        components
+
+
+1. The info object provides metadata about the API such as
+- Description
+- Terms of Service
+- Contact information
+- License
+- Version
+
+2. The servers object provides metadata about the servers hosting the API implementation.
+
+3. The security object describes the type of securtiy scheme used by the API.
+
+4. The paths object describes the API endpoints and the differenct operations that can be performed on those endpoints.
+
+5. The tags object and externalDocs objects supply additional metadata and links to external API documentation.
+
+6. The components object defines a set of reusable objects that  can be reference throughout the API.
+
+Sample Definition
+1. Parameters - /performance
+2. Template parameters - /performance/{performanceId}
+   - the template parameters in the url is performanceId
+3. Request Body
+    
